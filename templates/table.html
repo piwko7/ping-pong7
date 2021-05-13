@@ -1,0 +1,78 @@
+{% block sitea %}
+
+    <table>
+{% for r in form %}
+<tr>
+  <td> {{ r }}</td>
+</tr>
+{% endfor %}
+</table>
+
+</body>
+</html>
+
+
+{% extends 'index.html' %}
+{% load bootstrap %}
+
+{% block title %} Historia wyników {% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <td>#</td>
+            <td>Pojedynek</td>
+        </thead>
+        <tbody>
+        {% for mecz in form %}
+        <tr>
+            <td> {{ mecz }} </td>
+            <td> {{ mecz.duel_date }} </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+
+
+
+{% extends 'index.html' %}
+{% load bootstrap %}
+
+{% block title %} Historia wyników {% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <div class="scrollable">
+        <div class="card-header">Historia pojedynków</div>
+        {% for mecz in form %}
+        <h1>{{ mecz }}</h1>
+        <p>{{ mecz.duel_date }}</p>
+        <!--        <a href="{% url 'edit_score' mecz.id %}">Edytuj wynik</a>-->
+        <!--        <a href="{% url 'delete_score' mecz.id %}">Usun wynik</a>-->
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+<table class="table"></table>
+
+
+<table class="table table-fixed">        
+    <thead>
+        <td>Wynik</td>
+        <td>Data</td>
+    </thead>
+
+    <tbody>
+        {% for mecz in form %}        
+        <tr>
+            <td> {{ mecz }} </td>
+            <td> {{ mecz.duel_date }} </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>

@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block title %} Tabela wyników {% endblock %}
+
+{% block content %}
+    <table class="table">
+        <thead>
+            <td>Lp.</td>
+            <td>Gracz</td>
+            <td>Ilość meczów</td>
+            <td>Ilość zwycięstw</td>
+            <td>Ilość porażek</td>
+            <td>Punkty</td>
+            <td>Wygrane sety</td>
+            <td>Przegrane sety</td>
+            <td>Stosunek setów</td>
+        </thead>
+        <tbody>
+        {% for x in table %}
+        <tr>
+            <td> {{ forloop.counter }}</td>
+            <td> {{ x.player }}</td>
+            <td> {{ x.matches }}</td>
+            <td> {{ x.number_of_wins }}</td>
+            <td> {{ x.number_of_lost }}</td>
+            <td> {{ x.points }}</td>
+            <td> {{ x.won_sets }}</td>
+            <td> {{ x.lost_sets }}</td>
+            <td> {{ x.set_ratio }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

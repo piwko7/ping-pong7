@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+{% load bootstrap %}
+{% load static %}
+
+{% block title %} Under konstrakszyn {% endblock %}
+
+{% block content %}
+
+
+
+<div id="chart">
+  <script>
+    var options = {
+              series: [{
+              name: 'series1',
+              data: [31, 40, 28, 51, 42, 109, 100]
+            }, {
+              name: 'series2',
+              data: [11, 32, 45, 32, 34, 52, 41]
+            }],
+              chart: {
+              height: 350,
+              type: 'area',
+              foreColor: '#fff'
+            },
+            dataLabels: {
+              enabled: false
+            },
+            stroke: {
+              curve: 'smooth'
+            },
+            xaxis: {
+              type: 'datetime',
+              categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+            },
+            tooltip: {
+              x: {
+                format: 'dd/MM/yy HH:mm'
+              },
+            },
+            };
+  
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render();
+    </script>
+</div>
+
+<br>
+<div class="under-info">
+  <p> Do zrobienia: </p>
+  <P> - Testy :)</P>
+  <p> - Dodawanie nowego gracza </p>
+  <p> - Edycja/usuwanie wyniku z aktualizacja tabeli</p>
+  <p> - Sortowanie tabeli</p>
+  <p> - Opcja truniejowa </p>
+  <p> - Hisotria WLWLW w tabelii </p>
+  <p> - Sprawdzanie formularza na bieżąco </p>
+  <p> - Logowanie do dodawania wyniku  </p>
+  <p> - Walidacja date_time </p>
+  <p> - W razie pomysłów pisz: marcinpiwko7@gmail.com :) </p>
+
+</div>
+
+
+
+
+
+{% endblock %}

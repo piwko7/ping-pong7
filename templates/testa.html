@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<div class="form-group">
+            <label for="label">Zwycięzca sety</label>
+            {{ render_field form.winner_sets|add_class:"form-select form-select-lg mb-3"}}
+            <span class="text-danger">{{ form.winner_sets.errors|striptags }}</span>
+          </div>
+
+        <div class="form-group">
+            <label for="label">Zwycięzca</label>
+            {% render_field form.winner class+="form-select form-select-lg mb-3" %}
+            <span class="text-danger">{{ form.winner.errors|striptags }}</span>
+          </div>
+
+          <div class="form-group">
+          <label for="label">Przegrany sety</label>
+          {{ render_field form.lost_sets|add_class:"form-select form-select-lg mb-3" }}
+          <span class="text-danger">{{ form.lost_sets.errors|striptags }}</span>
+          </div>
+
+          <div class="form-group">
+          <label for="label">Przegrany</label>
+          {{ render_field form.lost|add_class:"form-select form-select-lg mb-3" }}
+          <span class="text-danger">{{ form.lost.errors|striptags }}</span>
+          </div>
+
+          <div class="form-group">
+          <label for="label">Data pojedynku</label>
+          {{ render_field form.duel_date|add_class:"form-control form-control-lg" }}
+          <span class="text-danger">{{ form.duel_date.errors|striptags }}</span>
+          </div>
