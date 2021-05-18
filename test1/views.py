@@ -19,8 +19,6 @@ def new_score(request):
     form = MatchScoreForm(request.POST or None)
 
     if form.is_valid():
-
-
         winner_name = form.cleaned_data.get('winner')
         winnser_sets = form.cleaned_data.get('winner_sets')
         lost_sets = form.cleaned_data.get('lost_sets')
@@ -95,6 +93,7 @@ def table_results(request):
         mecze = zwyciestwa + przegrane
         tabela.append({'gracz': g, 'mecze': mecze, 'zwyciestwa': zwyciestwa, 'przegrane': przegrane})
     return render(request, 'table.html', {'form': tabela})
+# tutaj dorobic HISOTRIE WLWL
 
 def show_table(request):
     table = Table.objects.all()

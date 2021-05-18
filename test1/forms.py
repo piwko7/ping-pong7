@@ -10,13 +10,13 @@ class MatchScoreForm(ModelForm):
         model = MatchScore
         fields = ['winner', 'winner_sets', 'lost_sets', 'lost', 'duel_date']
 
-    def clean(self):
-        cleaned_data = super().clean()
-        duel_date = cleaned_data.get('duel_date')
-        if duel_date is None:
-            self.add_error('duel_date', " Nieprawidłowy format daty")
-            raise ValidationError("Test")
-        return cleaned_data
+    # def clean(self):
+    #     cleaned_data = super().clean()
+    #     duel_date = cleaned_data.get('duel_date')
+    #     if duel_date is None:
+    #         self.add_error('duel_date', " Nieprawidłowy format daty")
+    #         raise ValidationError("Test")
+    #     return cleaned_data
 
     def clean_duel_date(self):
         duel_date = self.cleaned_data.get('duel_date')
@@ -29,7 +29,7 @@ class MatchScoreForm(ModelForm):
         lost = self.cleaned_data.get('lost')
         if winner == lost:
             raise ValidationError("Zwycięzca i przegrany nie może być taki sam.")
-        return winner
+        return lost
 
     def clean_winner_sets(self):
         winner_sets = self.cleaned_data.get('winner_sets')

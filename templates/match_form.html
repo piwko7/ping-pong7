@@ -12,6 +12,7 @@
 
       {% csrf_token %}
 
+
         <div class="form-group">
         <label for="label">Zwycięzca</label>
         {% render_field form.winner class+="form-select form-select-lg mb-3" %}
@@ -37,7 +38,7 @@
         </div>
 
         <div class="form-group">
-        <label for="label">Przegrany</label>
+        <label for="label">Data pojedynku</label>
         {% render_field form.duel_date class+="form-control mb-3" %}
         <span class="text-danger">{{ form.duel_date.errors|striptags }}</span>
         </div>
